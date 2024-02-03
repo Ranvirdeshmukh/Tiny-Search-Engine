@@ -1,5 +1,7 @@
-# CS50 TSE
-## Student name (GitHub username)
+# CS50 TSE Lab4
+## Ranvir Deshmukh
+## Ranvirdeshmukh
+
 
 The assignment and Specs are in a [public repo](https://github.com/CS50DartmouthWI24/labs/tse).
 Do not clone that repo; view it on GitHub.
