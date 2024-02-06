@@ -52,3 +52,39 @@ void pagedir_save(const webpage_t* page, const char* pageDirectory, const int do
     
 //not finding the file path properluy.
 }
+
+// Validate that a directory is a Crawler-produced directory
+bool pagedir_validate(const char* pageDirectory) {
+    char path[200];
+    sprintf(path, "%s/.crawler", pageDirectory);
+
+    FILE* fp = fopen(path, "r");
+    if (fp != NULL) {
+        fclose(fp);
+        return true;
+    }
+    return false;
+}
+
+// Load a webpage from a file within the pageDirectory
+webpage_t* pagedir_load(const char* pageDirectory, const int docID) {
+    char filepath[200];
+    sprintf(filepath, "%s/%d", pageDirectory, docID);
+
+    FILE* fp = fopen(filepath, "r");
+    if (fp == NULL) {
+        return NULL;
+    }
+
+    char* URL = file_readLine(fp);
+    int depth;
+    fscanf(fp, "%d", &depth);
+    char* html = file_readFile(fp);
+
+    webpage_t* page = webpage_new(URL, depth, html);
+    fclose(fp);
+
+    return page;
+}
+
+
