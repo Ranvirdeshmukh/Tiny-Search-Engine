@@ -64,19 +64,30 @@ bool index_add(index_t *index, const char *word, const int docID){
         // If the word exists, update the counter for the docID.
         counters_add(ctrs, docID);
     }
-
     return true;
 }
 
-
+void hp(FILE *fp, const char *key, void *item) {
+    counters_t* ctrs = (counters_t*)item;
+    fprintf(stdout, "%s = ", key);
+    counters_print(ctrs, fp);
+    fprintf(fp, "\n");
+    
+}
 
 // saving tyhe index to the file.
 void index_save(const index_t *index, const char *filename){
     FILE *file = fopen(filename, "w");
     if (file != NULL) {
         hashtable_iterate(index->hashtable, file, index_save_helper);
+        // hashtable_print(index->hashtable, stdout, hp);
         fclose(file);
     }
+}
+
+void helperc(void *arg, const int key, const int count) {
+    FILE *file = (FILE *)arg;
+    fprintf(file, " %d %d", key, count);
 }
 
 //using a helper functionfor index_save to handle each word.
@@ -84,9 +95,9 @@ static void index_save_helper(void *arg, const char *key, void *item) {
     FILE *file = (FILE *)arg;
     counters_t *ctrs = (counters_t *)item;
 
-    counters_print(ctrs, stderr);
-    fprintf(file, "%s ", key);
-    counters_print(ctrs, file);
+
+    fprintf(file, "%s", key);
+    counters_iterate(ctrs, file, helperc);
     fprintf(file, "\n");
 }
 

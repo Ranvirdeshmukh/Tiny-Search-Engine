@@ -10,4 +10,4 @@ echo "Running indextest..."
 
 # Compare old and new index files (assuming you have a utility for this)
 echo "Comparing index files..."
-diff ../data/letters.index ../data/letters-new.index
+diff ../data/letters.index ../datamaske/letters-new.index

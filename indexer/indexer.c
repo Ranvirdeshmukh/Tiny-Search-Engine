@@ -78,11 +78,10 @@ void indexPage(webpage_t* page, int docID, index_t* index) {
     while ((word = webpage_getNextWord(page, &pos)) != NULL) {
         if (strlen(word) >= 3) {
             char* normalizedWord = normalizeWord(word);
-            free(word); // Free original word after normalizing it.
+             // Free original word after normalizing it.
 
             if (index_get(index, normalizedWord) == NULL) {
                 // First occurrence of the word, add it to the index.
-                printf("%s\n", normalizedWord);
                 index_add(index, normalizedWord, docID);
             } else {
                 // Word already in index, just update counters.
@@ -91,6 +90,7 @@ void indexPage(webpage_t* page, int docID, index_t* index) {
             }
 
             free(normalizedWord); // Free normalized word after use.
-        }
+        } 
+        free(word);
     }
 }

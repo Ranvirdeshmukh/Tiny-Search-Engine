@@ -13,7 +13,7 @@ PROGS = $(PROG1) $(PROG2)
 # Object files
 OBJS1 = indexer.o
 OBJS2 = indextest.o
-LIBS = ../common/common.a ../libcs50/libcs50.a
+LIBS = ../common/common.a ../libcs50/libcs50-given.a
 
 .PHONY: all clean
 
