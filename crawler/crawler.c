@@ -161,6 +161,7 @@ static void pageScan(webpage_t* page, bag_t* pagesToCrawl, hashtable_t* pagesSee
             // If the URL is not valid, free it
             free(result);
         }
+        
     }
 }
 

@@ -18,10 +18,12 @@ char* normalizeWord(char* word) {
 
     }
 
-    char normalized* = malloc(strlen(word)+1);
+    char *normalized = malloc(strlen(word)+1);
+    //^memory allocation fails
     if (normalized ==NULL){
+        
         return NULL;
-        //^memory allocation fails
+        
     }
 
     for (int i = 0; word[i] != '\0'; i++) {
@@ -30,4 +32,7 @@ char* normalizeWord(char* word) {
     normalized[strlen(word)] = '\0'; // Null-terminate the string
 
     return normalized;
+
+
+
 }

@@ -13,7 +13,7 @@
 #include "../common/word.h"
 #include "../libcs50/webpage.h"
 #include "../libcs50/file.h"
-#include "libcs50-given.a"
+// #include "libcs50-given.a"
 
 // Function prototyping 
 void indexBuild(const char* pageDirectory, index_t* index);
@@ -22,6 +22,7 @@ void indexPage(webpage_t* page, int docID, index_t* index);
 
 // main function
 int main(int argc, char* argv[]){
+
     // checking of the command line argument 
     if (argc != 3){
         fprintf(stderr,"Usage: %s pageDirectory indexFilename\n", argv[0]);
@@ -49,13 +50,8 @@ int main(int argc, char* argv[]){
     indexBuild(pageDirectory, index);
 
     //save  index to file 
-    if (!index_save(index, indexFilename)){
-        fprintf(stderr, "unable to write index to %s \n", indexFilename);
-        index_delete(index);
-        return 1;
+    index_save(index, indexFilename);
 
-
-    }
     //cleaniing up
     index_delete(index);
     return 0;
@@ -67,34 +63,34 @@ void indexBuild(const char* pageDirectory, index_t* index){
     int docID=1;
     webpage_t* page;
 
-    while ((page = pagedir_load(pageDirecotry, docID))!=NULL){
+    while ((page = pagedir_load(pageDirectory, docID))!=NULL){
         indexPage(page, docID, index);
         webpage_delete(page);
         docID++;
-
     }
 }
 
-void indexPage(webpage_t* page, int docID, index_t* index){
+
+void indexPage(webpage_t* page, int docID, index_t* index) {
     int pos = 0;
     char* word;
 
     while ((word = webpage_getNextWord(page, &pos)) != NULL) {
         if (strlen(word) >= 3) {
-            char* normalizedWord = word_normalize(word);
-            free(word); // free original word after normalization
-            counters_t* ctrs = index_get(index, normalizedWord);
-            if (ctrs == NULL) {
-                // First occurrence of the word
-                ctrs = counters_new();
-                counters_add(ctrs, docID);
-                index_add(index, normalizedWord, ctrs);
+            char* normalizedWord = normalizeWord(word);
+            free(word); // Free original word after normalizing it.
+
+            if (index_get(index, normalizedWord) == NULL) {
+                // First occurrence of the word, add it to the index.
+                printf("%s\n", normalizedWord);
+                index_add(index, normalizedWord, docID);
             } else {
-                // Word already in index, just update counters
+                // Word already in index, just update counters.
+                counters_t* ctrs = index_get(index, normalizedWord);
                 counters_add(ctrs, docID);
             }
-            free(normalizedWord); // free normalized word after use
+
+            free(normalizedWord); // Free normalized word after use.
         }
     }
 }
-

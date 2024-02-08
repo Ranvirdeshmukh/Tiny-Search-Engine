@@ -10,6 +10,7 @@
 #include <string.h>
 #include "pagedir.h"
 #include "../libcs50/webpage.h"
+#include "../libcs50/file.h"
 
 // initialising the directory for crawler output
 bool pagedir_init(const char* pageDirectory){

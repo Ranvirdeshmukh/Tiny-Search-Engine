@@ -1,33 +1,34 @@
-# Makefile for CS50 library
-#   Builds and compiles all these utility functions into a library.
+# Makefile for CS50 'common' library
+#   Builds and compiles utility functions into a library.
 #
 # David Kotz, April 2016, July 2017, April 2019, 2021
 # updated by Xia Zhou, July 2016
+# Further updated for CS50 Indexer Lab
 
-# object files, and the target library
-OBJS = pagedir.o
+# Object files and the target library
+OBJS = pagedir.o index.o word.o
 LIB = common.a
 
-CFLAGS = -Wall -pedantic -std=c11 -ggdb $(FLAGS)
+CFLAGS = -Wall -pedantic -std=c11 -ggdb
 CC = gcc
 MAKE = make
 
 # Build $(LIB) by archiving object files
-# (you will need to drop in copy of set.c, counters.c, hashtable.c)
 $(LIB): $(OBJS)
 	ar cr $(LIB) $(OBJS)
 
 # Dependencies: object files depend on header files
-pagedir.o :pagedir.c pagedir.h
+pagedir.o: pagedir.c pagedir.h
+index.o: index.c index.h
+word.o: word.c word.h
 
 .PHONY: clean sourcelist
 
-# list all the sources and docs in this directory.
-# (this rule is used only by the Professor in preparing the starter kit)
+# List all the sources and docs in this directory
 sourcelist: Makefile *.md *.c *.h
 	@echo $^
 
-# clean up after our compilation
+# Clean up after our compilation
 clean:
 	rm -f core
 	rm -f $(LIB) *~ *.o

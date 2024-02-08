@@ -28,11 +28,8 @@ int main(int argc, char* argv[]) {
     }
 
     //saving the index to the new files
-    if (!index_save(index, newIndexFilename)) {
-        fprintf(stderr, "Failed to write index to '%s'\n", newIndexFilename);
-        index_delete(index);
-        return 1;
-    }
+    index_save(index, newIndexFilename);
+
 
     // Clean up
     index_delete(index);
