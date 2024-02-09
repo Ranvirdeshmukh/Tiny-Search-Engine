@@ -10,3 +10,10 @@ Memory leaks:
 ==2397242== 
 ==2397242== All heap blocks were freed -- no leaks are possible
 ==2397242== 
+
+
+There are extra files : readonly.index, test.index, output because they all are neccesary for the tests i have conducted.
+
+Thank you so much.
+Best,
+Ranvir Desmhkuh
