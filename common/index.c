@@ -145,6 +145,7 @@ index_t* index_load(const char *filename) {
             fclose(file);
             return NULL;
         }
+        free(wordCopy);
     }
 
     fclose(file);
