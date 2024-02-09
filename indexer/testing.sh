@@ -8,7 +8,7 @@ validPageDirectory="./output"
 validIndexFile="tst.index"
 newIndexFile="newTst.index"
 invalidPageDirectory="invalidDir"
-readonlyIndexFile="./readonly.index" # replace with your readonly directory path
+readonlyIndexFile="./readonly.index" 
 
 # Running indexer with valid arguments
 echo "Running indexer with valid arguments..."
@@ -37,7 +37,7 @@ touch "$readonlyIndexFile"
 chmod 444 "$readonlyIndexFile"
 ./indexer "$validPageDirectory" "$readonlyIndexFile"
 chmod 644 "$readonlyIndexFile" # Reset permissions
-echo "---------------done---------------"
+echo "---------------done--------------"
 
 # Memory leak check for indexer
 echo "Memory leak check for indexer"
