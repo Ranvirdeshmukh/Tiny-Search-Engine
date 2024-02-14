@@ -9,11 +9,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../common/pagedir.h"
-#include "../common/index.h"
+#include "../common/index.h"    
 #include "../common/word.h"
 #include "../libcs50/file.h"
 #include "../libcs50/hashtable.h"
 #include "../libcs50/counters.h"
+#include <ctype.h>
+
+
 
 //Declaring all the functions:
 
@@ -70,7 +73,7 @@ int main(int argc, char* argv[]){
 // Helper function prototypes for the process query
 static counters_t* and_sequence(char** words, int start, int end, index_t* index);
 static counters_t* or_sequence(char** words, int numWords, index_t* index);
-static void counters_union(counters_t* result, counters_t* ctrs);
+// counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2);
 static void print_query_results(counters_t* results, const char* pageDirectory);
 
 
@@ -143,20 +146,34 @@ static counters_t* and_sequence(char** words, int start, int end, index_t* index
 
 // Helper function to find and print the highest-scoring document
 static void find_and_print_max(counters_t* results, const char* pageDirectory);
-static void print_query_results(counters_t* results, const char* pageDirectory) {
+static void find_max(void* arg, const int key, const int count);
 
-    if (results !=NULL){
-        while(counters_size(results>0)){
-            find_and_print_max(results, pageDirectory);
-        }
-
-    }
-    else{
-        printf("No document found.\n");
-
-
+// Helper function to check if there are any non-zero counts.
+static void has_nonzero_count(void *arg, const int key, int count) {
+    bool *hasNonZero = (bool *)arg;
+    if (count > 0) {
+        *hasNonZero = true;
     }
 }
+
+static void print_query_results(counters_t* results, const char* pageDirectory) {
+    if (results != NULL) {
+        bool hasNonZero = false;
+        counters_iterate(results, &hasNonZero, has_nonzero_count);
+        
+        if (hasNonZero) {
+            while (!counters_is_empty(results)) {
+                find_and_print_max(results, pageDirectory);
+            }
+        } else {
+            printf("No document found.\n");
+        }
+    }
+    else {
+        printf("No document found.\n");
+    }
+}
+
 static void find_and_print_max(counters_t* results, const char* pageDirectory){
     struct{
         int docID;
@@ -165,23 +182,14 @@ static void find_and_print_max(counters_t* results, const char* pageDirectory){
     } data={-1,0};
 
     //making a function to find the max scoring documents 
-    void find_max(void* arg, const int key, const int count){
-        struct {int docID; int count;}* data =arg;
-        if ( count > data->count ){
-            data->docID=key;
-            data->count= count;
-
-
-        }
-    }
-
+    
     //iterating over all the documents for finding hte highest scorer 
     counters_iterate(results, &data, find_max);
 
     if( data.docID != -1){
-        char*url = pagedir_getURL(pageDirectory, data, docID);
+        char*url = pagedir_getURL(pageDirectory, data, data.docID);
         if (url !=NULL){
-            printf("")
+            printf("");
             free(url);
 
         }
@@ -191,10 +199,19 @@ static void find_and_print_max(counters_t* results, const char* pageDirectory){
     }
     
 }
+// Define find_max function before its usage
+static void find_max(void* arg, const int key, const int count) {
+    struct {int docID; int count;}* data = arg;
+    if (count > data->count) {
+        data->docID = key;
+        data->count = count;
+    }
+}
+
 
 bool isValidQuery(const char* query){
     if (query ==NULL){
-        reutrn false;
+        return false;
 
     }
     //checking for the empty query
@@ -213,13 +230,130 @@ bool isValidQuery(const char* query){
     while (word!=NULL){
         //checking for the valid word.
         for (int i=0 ; word[i]!= '\0'; i++){
-            if (!=is)
+            if (!isalpha(word[i])){
+                free(temp);
+                return false;
+
+            }
         }
+
+        normalizeWord(word);
+
+
+
+        //checking for the valid use of the 'and' 'or' operators
+        if ((strncmp(word, "and", 3) == 0 || strncmp(word, "or", 2) == 0) && lastWasOperator) {
+                free(temp);
+                return false;
+   
+
+        }
+        else{
+            lastWasOperator= false;
+            
+        }
+        
+        word = strtok(NULL, " ");
+
+
+    }
+    // Ensure query does not end with an operator
+    if (lastWasOperator) {
+        free(temp);
+        return false;
     }
 
-
-
+    free(temp);
+    return true;
 }
 
 
+char** parseQuery(const char* query, int* numWords) {
+    char**words =NULL;
+    *numWords=0;
 
+    if (query == NULL){
+        return NULL;
+
+    }
+
+    //copy the query to avoid moddiyfying the orginal string 
+    char * temp = strdup(query);
+    char * word = strtok(temp, "");
+
+    while (word != NULL) {
+        words = realloc(words, (*numWords + 1) * sizeof(char*));
+        words[*numWords] = strdup(word); // Ensure strdup is correctly declared
+        (*numWords)++;
+        word = strtok(NULL, " ");
+    }
+
+    free(temp);
+    return words;
+}
+
+void interactiveMode(index_t* index, const char* pageDirectory){
+    char *query;
+    size_t len =0;
+
+    printf("Enter query (or press Ctrl+D to exit): ");
+
+    while (getline(&query, &len, stdin) != -1) {
+        // Remove trailing newline character if present
+        if (query[strlen(query) - 1] == '\n') {
+            query[strlen(query) - 1] = '\0';
+        }
+
+        // Process and handle the query
+        processQuery(query, index, pageDirectory);
+
+        printf("\nEnter query (or press Ctrl+D to exit): ");
+    }
+
+    free(query); // Free the memory allocated by getline
+}
+
+static void intersection_helper(void *arg, const int key, int count) {
+    counters_t *result = arg;
+    int count2 = counters_get(result, key);
+    if (count2 > 0) {
+        counters_set(result, key, (count < count2) ? count : count2);
+    } else {
+        counters_set(result, key, 0);
+    }
+}
+
+// Union helper function declaration
+static void union_helper(void *arg, const int key, int count);
+
+// Implementation of counters_union
+counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2) {
+    counters_t *result = counters_new();
+    if (result == NULL) {
+        return NULL;
+    }
+    
+    // Merge ctrs1 into result
+    counters_iterate(ctrs1, result, union_helper);
+    // Merge ctrs2 into result
+    counters_iterate(ctrs2, result, union_helper);
+    return result;
+}
+
+// Implementation of union_helper function
+static void union_helper(void *arg, const int key, int count) {
+    counters_t *result = arg;
+    int existingCount = counters_get(result, key);
+    counters_set(result, key, existingCount + count);
+}
+
+
+// // Adjusted counters_union function
+// counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2) {
+//     counters_t *result = counters_new();
+//     if (result != NULL) {
+//         counters_iterate(ctrs1, result, union_helper);
+//         counters_iterate(ctrs2, result, union_helper);
+//     }
+//     return result;
+// }
