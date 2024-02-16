@@ -5,6 +5,8 @@
  * 
 */
 
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +38,7 @@ char** parseQuery(const char* query, int* numWords);
 void interactiveMode(index_t* index, const char* pageDirectory);
 
 /* Functions to set operations on counters (for 'and' and 'or' queries) */
-counters_t* counters_intersection(counters_t* ctrs1, counters_t* ctrs2);
+static void intersection_helper(void *arg, const int key, int count1);
 counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2);
 
 // main fucntion 
@@ -75,6 +77,53 @@ static counters_t* and_sequence(char** words, int start, int end, index_t* index
 static counters_t* or_sequence(char** words, int numWords, index_t* index);
 // counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2);
 static void print_query_results(counters_t* results, const char* pageDirectory);
+
+char ** tokenize(const char* query, int* numWords){
+    if (query == NULL){
+        numWords =0;
+        return NULL;
+
+    }
+
+    // allocating the space for the words array
+    int capacity =10;
+    char ** words =  malloc(capacity * sizeof(char*));
+    *numWords =0;
+
+    const char* wordStart = query;
+    while (*wordStart != '\0') {
+        //skiping the white spaces
+        while (isspace(*wordStart)){
+            wordStart++;
+
+        }
+        const char* wordEnd = wordStart;
+        while(*wordEnd!='\0' &&!isspace(*wordEnd)){
+            wordEnd++;
+
+        }
+        //if we find the word, add it to the array
+        if (wordEnd != wordStart) {
+            int wordLength = wordEnd - wordStart;
+            words[*numWords] = strndup(wordStart, wordLength);
+            normalizeWord(words[*numWords]);
+            (*numWords)++;
+
+            // Resize the array if necessary
+            if (*numWords == capacity) {
+                capacity *= 2;
+                words = realloc(words, capacity * sizeof(char*));
+            }
+
+            wordStart = wordEnd;
+        }
+        if (*wordStart != '\0') wordStart++; // Skip the space
+    }
+    return words;
+
+
+    
+}
 
 
 void processQuery(const char* query, index_t* index, const char* pageDirectory){
@@ -129,15 +178,23 @@ static counters_t* or_sequence(char** words, int numWords, index_t* index){
 
 }
 
-static counters_t* and_sequence(char** words, int start, int end, index_t* index){
-    counters_t* result = index_get(index, words[start]);
+static counters_t* and_sequence(char** words, int start, int end, index_t* index) {
+    if (words == NULL || index == NULL) {
+        return NULL;
+    }
+
+    counters_t* result = counters_new();
+    if (result == NULL) {
+        return NULL;
+    }
+
+    counters_t* temp = index_get(index, words[start]);
+    counters_iterate(temp, result, intersection_helper);
 
     for (int i = start + 1; i < end; i++) {
         if (strcmp(words[i], "and") != 0) {
-            counters_t* ctrs = index_get(index, words[i]);
-            counters_t* temp = counters_intersection(result, ctrs);
-            counters_delete(result);
-            result = temp;
+            temp = index_get(index, words[i]);
+            counters_iterate(temp, result, intersection_helper);
         }
     }
 
@@ -162,8 +219,11 @@ static void print_query_results(counters_t* results, const char* pageDirectory) 
         counters_iterate(results, &hasNonZero, has_nonzero_count);
         
         if (hasNonZero) {
-            while (!counters_is_empty(results)) {
+            // As long as we find a non-zero counter, keep finding and printing max
+            while (hasNonZero) {
+                hasNonZero = false;
                 find_and_print_max(results, pageDirectory);
+                counters_iterate(results, &hasNonZero, has_nonzero_count);
             }
         } else {
             printf("No document found.\n");
@@ -178,27 +238,29 @@ static void find_and_print_max(counters_t* results, const char* pageDirectory){
     struct{
         int docID;
         int count;
+    } data = {-1, 0};
 
-    } data={-1,0};
-
-    //making a function to find the max scoring documents 
-    
-    //iterating over all the documents for finding hte highest scorer 
+    // Iterate over all the documents to find the highest scorer
     counters_iterate(results, &data, find_max);
 
-    if( data.docID != -1){
-        char*url = pagedir_getURL(pageDirectory, data, data.docID);
-        if (url !=NULL){
-            printf("");
-            free(url);
+    if (data.docID != -1) {
+        // Load the webpage using pagedir_load
+        webpage_t* page = pagedir_load(pageDirectory, data.docID);
+        if (page != NULL) {
+            // Print the document ID, count, and URL
+            printf("Doc ID: %d, Count: %d, URL: %s\n", data.docID, data.count, webpage_getURL(page));
 
+            // Clean up
+            webpage_delete(page); // Frees the memory allocated for the webpage
+        } else {
+            printf("Error retrieving webpage for document %d\n", data.docID);
         }
 
-
+        // Reset the count for this document ID to 0
         counters_set(results, data.docID, 0);
     }
-    
 }
+
 // Define find_max function before its usage
 static void find_max(void* arg, const int key, const int count) {
     struct {int docID; int count;}* data = arg;
@@ -236,24 +298,19 @@ bool isValidQuery(const char* query){
 
             }
         }
+        
 
         normalizeWord(word);
-
-
 
         //checking for the valid use of the 'and' 'or' operators
         if ((strncmp(word, "and", 3) == 0 || strncmp(word, "or", 2) == 0) && lastWasOperator) {
                 free(temp);
-                return false;
-   
-
+                return false;              
         }
         else{
-            lastWasOperator= false;
-            
-        }
-        
-        word = strtok(NULL, " ");
+            lastWasOperator= false; 
+        } 
+        // word =  (NULL, " ");
 
 
     }
@@ -269,27 +326,8 @@ bool isValidQuery(const char* query){
 
 
 char** parseQuery(const char* query, int* numWords) {
-    char**words =NULL;
-    *numWords=0;
+    return tokenize(query, numWords);
 
-    if (query == NULL){
-        return NULL;
-
-    }
-
-    //copy the query to avoid moddiyfying the orginal string 
-    char * temp = strdup(query);
-    char * word = strtok(temp, "");
-
-    while (word != NULL) {
-        words = realloc(words, (*numWords + 1) * sizeof(char*));
-        words[*numWords] = strdup(word); // Ensure strdup is correctly declared
-        (*numWords)++;
-        word = strtok(NULL, " ");
-    }
-
-    free(temp);
-    return words;
 }
 
 void interactiveMode(index_t* index, const char* pageDirectory){
@@ -313,16 +351,16 @@ void interactiveMode(index_t* index, const char* pageDirectory){
     free(query); // Free the memory allocated by getline
 }
 
-static void intersection_helper(void *arg, const int key, int count) {
-    counters_t *result = arg;
-    int count2 = counters_get(result, key);
+static void intersection_helper(void *arg, const int key, int count1) {
+    counters_t *ctrs2 = arg;
+    int count2 = counters_get(ctrs2, key);
     if (count2 > 0) {
-        counters_set(result, key, (count < count2) ? count : count2);
+        int minCount = (count1 < count2) ? count1 : count2;
+        counters_set(ctrs2, key, minCount);
     } else {
-        counters_set(result, key, 0);
+        counters_set(ctrs2, key, 0);
     }
 }
-
 // Union helper function declaration
 static void union_helper(void *arg, const int key, int count);
 
@@ -331,6 +369,7 @@ counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2) {
     counters_t *result = counters_new();
     if (result == NULL) {
         return NULL;
+
     }
     
     // Merge ctrs1 into result
@@ -346,6 +385,7 @@ static void union_helper(void *arg, const int key, int count) {
     int existingCount = counters_get(result, key);
     counters_set(result, key, existingCount + count);
 }
+
 
 
 // // Adjusted counters_union function
