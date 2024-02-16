@@ -28,10 +28,11 @@ index_t* index_load(const char* indexFilename);
 /*Function to handle the query procesing*/
 void processQuery(const char* query, index_t* index, const char* pageDirectory);
 
+char ** tokenize(const char* query, int* numWords);
 
 
 /*Function for parsing and validating queries */
-bool isValidQuery(const char* query);
+bool isValidQuery(char** words, int numWords);
 char** parseQuery(const char* query, int* numWords);
 
 /* Function to interact with the user and process queries */
@@ -127,16 +128,21 @@ char ** tokenize(const char* query, int* numWords){
 
 
 void processQuery(const char* query, index_t* index, const char* pageDirectory){
-    //assuming the parse query and isvalidquery are implemented 
-    if (!isValidQuery(query)){
-        fprintf(stderr,"Wrong Query.\n");
+    int numWords=0;
+    char ** words =tokenize(query, &numWords);
+    
+    // Validate the tokenized query
+    if (!isValidQuery(words, numWords)) {
+        fprintf(stderr, "Invalid Query.\n");
+        // Free the allocated words
+        for (int i = 0; i < numWords; i++) {
+            free(words[i]);
+        }
+        free(words);
         return;
-
-
     }
 
-    int numWords=0;
-    char ** words =parseQuery(query, &numWords);
+    
 
     if (numWords==0){
         free(words);
@@ -154,7 +160,7 @@ void processQuery(const char* query, index_t* index, const char* pageDirectory){
 
     }
     free(words);
-    counters_delete(results);
+    // counters_delete(results);
 
 }
 
@@ -271,56 +277,21 @@ static void find_max(void* arg, const int key, const int count) {
 }
 
 
-bool isValidQuery(const char* query){
-    if (query ==NULL){
+bool isValidQuery(char** words, int numWords) {
+    if (numWords == 0) return false;
+
+    if (strcmp(words[0], "and") == 0 || strcmp(words[0], "or") == 0 ||
+        strcmp(words[numWords - 1], "and") == 0 || strcmp(words[numWords - 1], "or") == 0) {
         return false;
-
     }
-    //checking for the empty query
-    if (strlen(query) ==0){
-        return false;
 
-    }
-    // now spliting the query in the words and then words to process each word.
-    char *temp = strdup(query);
-    char *word = strtok(temp,"");
-
-    // to track if the last word was  the operator it wont work then.
-
-    bool lastWasOperator = false;
-
-    while (word!=NULL){
-        //checking for the valid word.
-        for (int i=0 ; word[i]!= '\0'; i++){
-            if (!isalpha(word[i])){
-                free(temp);
-                return false;
-
-            }
+    for (int i = 0; i < numWords - 1; i++) {
+        if ((strcmp(words[i], "and") == 0 || strcmp(words[i], "or") == 0) &&
+            (strcmp(words[i + 1], "and") == 0 || strcmp(words[i + 1], "or") == 0)) {
+            return false;
         }
-        
-
-        normalizeWord(word);
-
-        //checking for the valid use of the 'and' 'or' operators
-        if ((strncmp(word, "and", 3) == 0 || strncmp(word, "or", 2) == 0) && lastWasOperator) {
-                free(temp);
-                return false;              
-        }
-        else{
-            lastWasOperator= false; 
-        } 
-        // word =  (NULL, " ");
-
-
-    }
-    // Ensure query does not end with an operator
-    if (lastWasOperator) {
-        free(temp);
-        return false;
     }
 
-    free(temp);
     return true;
 }
 
