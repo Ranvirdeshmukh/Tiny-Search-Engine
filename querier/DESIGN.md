@@ -57,6 +57,7 @@ Function tokenize(query: string, numWords: pointer to integer) returns array of 
 
         7. Return the words array
     End
+```
 
 ```plaintext
 Function and_sequence(words: array of strings, start: integer, end: integer, index: index_t) returns counters_t
@@ -80,6 +81,7 @@ Function and_sequence(words: array of strings, start: integer, end: integer, ind
 
         6. Return the 'result' counters object
     End
+```
 
 ```pseudocode
 Function or_sequence(words: array of strings, numWords: integer, index: index_t) returns counters_t
@@ -103,6 +105,7 @@ Function or_sequence(words: array of strings, numWords: integer, index: index_t)
 
         7. Return 'final'
     End
+```
 
 ### Query Processing
 1. rocessing 'AND' Sequences: Consecutive words without 'OR' are processed as an 'AND' sequence, intersecting the document sets.
