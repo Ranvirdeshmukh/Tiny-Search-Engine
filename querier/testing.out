@@ -1,0 +1,334 @@
+testing with no arguments
+
+---------------------END-------------------------
+testing with one arguments
+
+---------------------END-------------------------
+the word - 'dartmouth' is tested
+Enter query (or press Ctrl+D to exit): Doc ID: 212, Count: 416, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Doc ID: 251, Count: 18, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ECAC_Hockey.html
+Doc ID: 40, Count: 15, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Doc ID: 114, Count: 12, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Doc ID: 245, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-2.html
+Doc ID: 234, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/TD_Bank_Sports_Center.html
+Doc ID: 235, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hobey_Baker_Memorial_Rink.html
+Doc ID: 236, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bright_Hockey_Center.html
+Doc ID: 242, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen_ice_hockey.html
+Doc ID: 243, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen.html
+Doc ID: 244, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-3.html
+Doc ID: 246, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St.html
+Doc ID: 70, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_sharing.html
+Doc ID: 136, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clifford_Stein.html
+Doc ID: 218, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Keene_State_College.html
+Doc ID: 221, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Saint_Anselm_College.html
+Doc ID: 225, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lebanon_College.html
+Doc ID: 230, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ingalls_Rink.html
+Doc ID: 231, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Achilles_Rink.html
+Doc ID: 232, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Appleton_Arena.html
+Doc ID: 233, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Houston_Field_House.html
+Doc ID: 237, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lynah_Rink.html
+Doc ID: 238, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Starr_Arena.html
+Doc ID: 239, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cheel_Arena.html
+Doc ID: 240, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Meehan_Auditorium.html
+Doc ID: 241, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchwomen_ice_hockey.html
+Doc ID: 247, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rensselaer_Engineers.html
+Doc ID: 248, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quinnipiac_Bobcats.html
+Doc ID: 250, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clarkson_Golden_Knights.html
+Doc ID: 252, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_William_%26_Mary.html
+Doc ID: 255, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Swarthmore_College.html
+Doc ID: 1, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/
+Doc ID: 74, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Doc ID: 101, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Doc ID: 106, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/LISP.html
+Doc ID: 119, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Doc ID: 213, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/White_Mountains_Community_College.html
+Doc ID: 214, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_Hampshire_Technical_Institute.html
+Doc ID: 215, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Nashua_Community_College.html
+Doc ID: 216, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Manchester_Community_College_(New_Hampshire).html
+Doc ID: 217, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Community_College_System_of_New_Hampshire.html
+Doc ID: 219, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Granite_State_College.html
+Doc ID: 220, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_More_College_of_Liberal_Arts.html
+Doc ID: 222, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_Hampshire_Institute_of_Art.html
+Doc ID: 223, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_England_College.html
+Doc ID: 224, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Mount_Washington_College.html
+Doc ID: 226, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Daniel_Webster_College.html
+Doc ID: 227, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_Saint_Mary_Magdalen.html
+Doc ID: 228, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Colby%e2%80%93Sawyer_College.html
+Doc ID: 253, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Williams_College.html
+Doc ID: 254, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Wellesley_College.html
+
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+the word - 'harvard' is tested
+Enter query (or press Ctrl+D to exit): Doc ID: 251, Count: 36, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ECAC_Hockey.html
+Doc ID: 236, Count: 30, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bright_Hockey_Center.html
+Doc ID: 212, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Doc ID: 237, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lynah_Rink.html
+Doc ID: 252, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_William_%26_Mary.html
+Doc ID: 230, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ingalls_Rink.html
+Doc ID: 245, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-2.html
+Doc ID: 253, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Williams_College.html
+Doc ID: 254, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Wellesley_College.html
+Doc ID: 116, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/RAND_Corporation.html
+Doc ID: 183, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Translation_lookaside_buffer.html
+Doc ID: 242, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen_ice_hockey.html
+Doc ID: 243, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen.html
+Doc ID: 247, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rensselaer_Engineers.html
+Doc ID: 250, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clarkson_Golden_Knights.html
+Doc ID: 117, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Herbert_A.html
+Doc ID: 184, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Doc ID: 192, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Denial_of_service_attack.html
+Doc ID: 221, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Saint_Anselm_College.html
+Doc ID: 231, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Achilles_Rink.html
+Doc ID: 232, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Appleton_Arena.html
+Doc ID: 233, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Houston_Field_House.html
+Doc ID: 234, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/TD_Bank_Sports_Center.html
+Doc ID: 235, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hobey_Baker_Memorial_Rink.html
+Doc ID: 238, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Starr_Arena.html
+Doc ID: 239, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cheel_Arena.html
+Doc ID: 240, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Meehan_Auditorium.html
+Doc ID: 241, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchwomen_ice_hockey.html
+Doc ID: 244, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-3.html
+Doc ID: 246, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St.html
+Doc ID: 248, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quinnipiac_Bobcats.html
+Doc ID: 255, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Swarthmore_College.html
+Doc ID: 44, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Doc ID: 79, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Recursion.html
+Doc ID: 114, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Doc ID: 119, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Doc ID: 135, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Karl_Pearson.html
+
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ 'dartmouth and harvard' are tested
+Enter query (or press Ctrl+D to exit): Doc ID: 251, Count: 18, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ECAC_Hockey.html
+Doc ID: 212, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Doc ID: 245, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-2.html
+Doc ID: 236, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bright_Hockey_Center.html
+Doc ID: 242, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen_ice_hockey.html
+Doc ID: 243, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen.html
+Doc ID: 221, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Saint_Anselm_College.html
+Doc ID: 230, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ingalls_Rink.html
+Doc ID: 231, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Achilles_Rink.html
+Doc ID: 232, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Appleton_Arena.html
+Doc ID: 233, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Houston_Field_House.html
+Doc ID: 234, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/TD_Bank_Sports_Center.html
+Doc ID: 235, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hobey_Baker_Memorial_Rink.html
+Doc ID: 237, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lynah_Rink.html
+Doc ID: 238, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Starr_Arena.html
+Doc ID: 239, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cheel_Arena.html
+Doc ID: 240, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Meehan_Auditorium.html
+Doc ID: 241, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchwomen_ice_hockey.html
+Doc ID: 244, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-3.html
+Doc ID: 246, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St.html
+Doc ID: 247, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rensselaer_Engineers.html
+Doc ID: 248, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quinnipiac_Bobcats.html
+Doc ID: 250, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clarkson_Golden_Knights.html
+Doc ID: 252, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_William_%26_Mary.html
+Doc ID: 255, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Swarthmore_College.html
+Doc ID: 114, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Doc ID: 119, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Doc ID: 253, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Williams_College.html
+Doc ID: 254, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Wellesley_College.html
+
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ 'dartmouth or harvard' are tested
+Enter query (or press Ctrl+D to exit): Doc ID: 212, Count: 422, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Doc ID: 251, Count: 54, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ECAC_Hockey.html
+Doc ID: 236, Count: 33, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bright_Hockey_Center.html
+Doc ID: 40, Count: 15, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Doc ID: 114, Count: 13, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Doc ID: 245, Count: 8, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-2.html
+Doc ID: 237, Count: 7, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lynah_Rink.html
+Doc ID: 252, Count: 7, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_William_%26_Mary.html
+Doc ID: 230, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ingalls_Rink.html
+Doc ID: 242, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen_ice_hockey.html
+Doc ID: 243, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen.html
+Doc ID: 234, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/TD_Bank_Sports_Center.html
+Doc ID: 235, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hobey_Baker_Memorial_Rink.html
+Doc ID: 244, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-3.html
+Doc ID: 246, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St.html
+Doc ID: 247, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rensselaer_Engineers.html
+Doc ID: 250, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clarkson_Golden_Knights.html
+Doc ID: 253, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Williams_College.html
+Doc ID: 254, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Wellesley_College.html
+Doc ID: 221, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Saint_Anselm_College.html
+Doc ID: 231, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Achilles_Rink.html
+Doc ID: 232, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Appleton_Arena.html
+Doc ID: 233, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Houston_Field_House.html
+Doc ID: 238, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Starr_Arena.html
+Doc ID: 239, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cheel_Arena.html
+Doc ID: 240, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Meehan_Auditorium.html
+Doc ID: 241, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchwomen_ice_hockey.html
+Doc ID: 248, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quinnipiac_Bobcats.html
+Doc ID: 255, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Swarthmore_College.html
+Doc ID: 116, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/RAND_Corporation.html
+Doc ID: 183, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Translation_lookaside_buffer.html
+Doc ID: 70, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_sharing.html
+Doc ID: 119, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Doc ID: 136, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clifford_Stein.html
+Doc ID: 218, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Keene_State_College.html
+Doc ID: 225, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lebanon_College.html
+Doc ID: 117, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Herbert_A.html
+Doc ID: 184, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Doc ID: 192, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Denial_of_service_attack.html
+Doc ID: 1, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/
+Doc ID: 74, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Doc ID: 101, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Doc ID: 106, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/LISP.html
+Doc ID: 213, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/White_Mountains_Community_College.html
+Doc ID: 214, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_Hampshire_Technical_Institute.html
+Doc ID: 215, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Nashua_Community_College.html
+Doc ID: 216, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Manchester_Community_College_(New_Hampshire).html
+Doc ID: 217, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Community_College_System_of_New_Hampshire.html
+Doc ID: 219, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Granite_State_College.html
+Doc ID: 220, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_More_College_of_Liberal_Arts.html
+Doc ID: 222, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_Hampshire_Institute_of_Art.html
+Doc ID: 223, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_England_College.html
+Doc ID: 224, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Mount_Washington_College.html
+Doc ID: 226, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Daniel_Webster_College.html
+Doc ID: 227, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_Saint_Mary_Magdalen.html
+Doc ID: 228, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Colby%e2%80%93Sawyer_College.html
+Doc ID: 44, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Doc ID: 79, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Recursion.html
+Doc ID: 135, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Karl_Pearson.html
+
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ 'dartmouth and ' are tested
+Enter query (or press Ctrl+D to exit): 
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ 'dartmouth or ' are tested
+Enter query (or press Ctrl+D to exit): 
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ 'harvard or ' are tested
+Enter query (or press Ctrl+D to exit): 
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------
+ pittsburgh or nanoscale or include 
+Enter query (or press Ctrl+D to exit): Doc ID: 212, Count: 18, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Doc ID: 161, Count: 14, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perl.html
+Doc ID: 252, Count: 12, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_William_%26_Mary.html
+Doc ID: 114, Count: 9, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Doc ID: 160, Count: 9, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/PHP.html
+Doc ID: 57, Count: 8, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Programming_language.html
+Doc ID: 253, Count: 8, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Williams_College.html
+Doc ID: 254, Count: 8, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Wellesley_College.html
+Doc ID: 130, Count: 7, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/NIST.html
+Doc ID: 174, Count: 7, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Java_(programming_language).html
+Doc ID: 246, Count: 7, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St.html
+Doc ID: 26, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Circular_buffer.html
+Doc ID: 107, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linguistics.html
+Doc ID: 149, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C%2b%2b11.html
+Doc ID: 155, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/JavaScript.html
+Doc ID: 184, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Doc ID: 202, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Software.html
+Doc ID: 243, Count: 6, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Union_Dutchmen.html
+Doc ID: 117, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Herbert_A.html
+Doc ID: 39, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Doc ID: 162, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AWK.html
+Doc ID: 186, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sequence.html
+Doc ID: 221, Count: 5, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Saint_Anselm_College.html
+Doc ID: 247, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rensselaer_Engineers.html
+Doc ID: 60, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Serialization.html
+Doc ID: 71, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/FIFO_(computing).html
+Doc ID: 74, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Doc ID: 101, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Doc ID: 106, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/LISP.html
+Doc ID: 110, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Machine_translation.html
+Doc ID: 150, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Library_(computing).html
+Doc ID: 192, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Denial_of_service_attack.html
+Doc ID: 207, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computing.html
+Doc ID: 226, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Daniel_Webster_College.html
+Doc ID: 250, Count: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clarkson_Golden_Knights.html
+Doc ID: 116, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/RAND_Corporation.html
+Doc ID: 21, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tree_(data_structure).html
+Doc ID: 35, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Collection_(abstract_data_type).html
+Doc ID: 67, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pseudocode.html
+Doc ID: 104, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/MIT_Lincoln_Laboratory.html
+Doc ID: 126, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Doc ID: 148, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unordered_map_(C%2b%2b).html
+Doc ID: 156, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Python_(programming_language).html
+Doc ID: 163, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/String_(computing).html
+Doc ID: 172, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Real-time_system.html
+Doc ID: 190, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Constant_time.html
+Doc ID: 209, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_complexity.html
+Doc ID: 255, Count: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Swarthmore_College.html
+Doc ID: 119, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Doc ID: 2, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Doc ID: 16, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Splay_tree.html
+Doc ID: 29, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Doc ID: 30, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Priority_queue.html
+Doc ID: 32, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_queue.html
+Doc ID: 50, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(data_structure).html
+Doc ID: 56, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Functional_programming_language.html
+Doc ID: 63, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_type.html
+Doc ID: 76, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tail-sharing.html
+Doc ID: 79, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Recursion.html
+Doc ID: 88, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Character_(computing).html
+Doc ID: 97, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Null_pointer.html
+Doc ID: 112, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/UNESCO.html
+Doc ID: 121, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Doc ID: 122, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/S-expression.html
+Doc ID: 123, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Doc ID: 125, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(abstract_data_type).html
+Doc ID: 138, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Distributed_hash_table.html
+Doc ID: 154, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ruby_(programming_language).html
+Doc ID: 157, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_data_structure.html
+Doc ID: 164, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Black_hat_hacking.html
+Doc ID: 173, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Space-time_tradeoff.html
+Doc ID: 196, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Prime_number.html
+Doc ID: 199, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Power_of_two.html
+Doc ID: 216, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Manchester_Community_College_(New_Hampshire).html
+Doc ID: 218, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Keene_State_College.html
+Doc ID: 223, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_England_College.html
+Doc ID: 227, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/The_College_of_Saint_Mary_Magdalen.html
+Doc ID: 233, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Houston_Field_House.html
+Doc ID: 249, Count: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Colgate_Raiders.html
+Doc ID: 5, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_decision_diagram.html
+Doc ID: 245, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/St-2.html
+Doc ID: 6, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graph_(abstract_data_type).html
+Doc ID: 20, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/B-tree.html
+Doc ID: 23, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_data_structure.html
+Doc ID: 25, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hashed_array_tree.html
+Doc ID: 34, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Container_(abstract_data_type).html
+Doc ID: 38, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Donald_Knuth.html
+Doc ID: 41, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Doc ID: 46, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heap_(data_structure).html
+Doc ID: 49, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(data_structure).html
+Doc ID: 52, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Index_(database).html
+Doc ID: 58, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big-O_notation.html
+Doc ID: 65, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Asymptotic_time_complexity.html
+Doc ID: 72, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_buffer.html
+Doc ID: 73, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Polygon.html
+Doc ID: 82, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Parallel_algorithm.html
+Doc ID: 85, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Doc ID: 87, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Boolean_value.html
+Doc ID: 94, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Doc ID: 109, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Natural_language.html
+Doc ID: 111, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Turing_Award.html
+Doc ID: 115, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Information_Processing_Language.html
+Doc ID: 124, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(abstract_data_type).html
+Doc ID: 128, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Doc ID: 129, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ICI_programming_language.html
+Doc ID: 133, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Serial_Number.html
+Doc ID: 136, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clifford_Stein.html
+Doc ID: 151, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/String_interning.html
+Doc ID: 152, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Expression_tree.html
+Doc ID: 166, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Finite_automata.html
+Doc ID: 167, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Spell_checker.html
+Doc ID: 171, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Monotonic_function.html
+Doc ID: 177, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cuckoo_hashing.html
+Doc ID: 179, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double_hashing.html
+Doc ID: 180, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quadratic_probing.html
+Doc ID: 183, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Translation_lookaside_buffer.html
+Doc ID: 187, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graceful_degradation.html
+Doc ID: 189, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Birthday_problem.html
+Doc ID: 194, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cryptographic_hash_function.html
+Doc ID: 195, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Open_addressing.html
+Doc ID: 201, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Database_index.html
+Doc ID: 203, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Table_(computing).html
+Doc ID: 205, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_function.html
+Doc ID: 208, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big_O_notation.html
+Doc ID: 214, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/New_Hampshire_Technical_Institute.html
+Doc ID: 225, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lebanon_College.html
+Doc ID: 229, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Boardwalk_Hall.html
+Doc ID: 230, Count: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ingalls_Rink.html
+
+Enter query (or press Ctrl+D to exit): ---------------------END-------------------------

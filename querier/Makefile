@@ -10,7 +10,7 @@ PROG = querier
 
 # Object files
 OBJS = querier.o
-LIBS = ../common/common.a ../libcs50/libcs50.a
+LIBS = ../common/common.a 
 
 .PHONY: all clean
 
@@ -19,7 +19,7 @@ all: $(PROG)
 
 # Build rule for the program
 $(PROG): $(OBJS) $(LIBS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ ../libcs50/libcs50-given.a -o $@
 
 # Dependencies
 querier.o: querier.c ../common/pagedir.h ../common/index.h ../common/word.h

@@ -23,6 +23,7 @@ index_t* index_load(const char *filename);
 void index_save(const index_t *index, const char *filename);
 void index_delete(index_t *index);
 counters_t* index_get(index_t *index, const char *word);
+void index_print(index_t* index, FILE *fp);
 
 
 

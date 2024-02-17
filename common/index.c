@@ -114,8 +114,12 @@ index_t* index_load(const char *filename) {
         return NULL;
     }
 
+ 
+
     char word[200];
+
     while (fscanf(file, "%s", word) != EOF) {
+
         // Allocate memory for the word and copy it.
         char *wordCopy = strdup(word);
         if (wordCopy == NULL) {
@@ -155,9 +159,11 @@ index_t* index_load(const char *filename) {
 // Function to retrieve counters for a word
 counters_t* index_get(index_t *index, const char *word) {
     if (index == NULL || word == NULL) {
+        printf("assa");
         return NULL;
     }
-    return hashtable_find(index->hashtable, word);
+    
+    return (counters_t*)hashtable_find(index->hashtable, word);
 }
 
 
@@ -171,6 +177,10 @@ void index_delete(index_t *index) {
 /* Wrapper function for counters_delete */
 static void custom_counters_delete(void *item) {
     counters_delete((counters_t *)item);
+}
+
+void index_print(index_t* index, FILE *fp) {
+    hashtable_print(index->hashtable, fp, hp);
 }
 
 

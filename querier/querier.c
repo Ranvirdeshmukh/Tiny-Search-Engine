@@ -23,7 +23,7 @@
 //Declaring all the functions:
 
 /* Function to load the index from a file */
-index_t* index_load(const char* indexFilename);
+// index_t* index_load(const char* indexFilename);
 
 /*Function to handle the query procesing*/
 void processQuery(const char* query, index_t* index, const char* pageDirectory);
@@ -40,6 +40,8 @@ void interactiveMode(index_t* index, const char* pageDirectory);
 
 /* Functions to set operations on counters (for 'and' and 'or' queries) */
 static void intersection_helper(void *arg, const int key, int count1);
+static void union_helper(void *arg, const int key, int count);
+
 counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2);
 
 // main fucntion 
@@ -59,12 +61,13 @@ int main(int argc, char* argv[]){
 
     //loading the index.
     index_t* index = index_load(indexFilename);
+
     if (index == NULL) {
         fprintf(stderr, "Error while loading index from file %s\n", indexFilename);
         return 2;
     }
 
-    //callign interative mode
+    //calling interative mode
     interactiveMode(index, pageDirectory);
 
     //cleanup
@@ -107,7 +110,7 @@ char ** tokenize(const char* query, int* numWords){
         if (wordEnd != wordStart) {
             int wordLength = wordEnd - wordStart;
             words[*numWords] = strndup(wordStart, wordLength);
-            normalizeWord(words[*numWords]);
+            // normalizeWord(words[*numWords]);
             (*numWords)++;
 
             // Resize the array if necessary
@@ -141,7 +144,6 @@ void processQuery(const char* query, index_t* index, const char* pageDirectory){
         free(words);
         return;
     }
-
     
 
     if (numWords==0){
@@ -151,6 +153,7 @@ void processQuery(const char* query, index_t* index, const char* pageDirectory){
     }
     counters_t* results = or_sequence(words, numWords, index);
 
+  
     // Print the results of the query
     print_query_results(results, pageDirectory);
 
@@ -160,7 +163,7 @@ void processQuery(const char* query, index_t* index, const char* pageDirectory){
 
     }
     free(words);
-    // counters_delete(results);
+    counters_delete(results);
 
 }
 
@@ -169,22 +172,31 @@ static counters_t* or_sequence(char** words, int numWords, index_t* index){
     int start =0;
 
     for (int i=0; i<numWords; i++){
-        if( strcmp(words[i], "or")==0){
-            counters_t * subResult = and_sequence(words, start,i , index);
-            counters_union(result, subResult);
+        if(strcmp(words[i], "or") == 0){
+            counters_t * subResult = and_sequence(words, start, i - 1, index);
+
+            result = counters_union(result, subResult);
             counters_delete(subResult);
             start= i+1;
         }
+
     }
+    
     counters_t* subResult = and_sequence(words, start, numWords, index);
-    counters_union(result, subResult);
+
+
+
+    counters_t* final = counters_union(result, subResult);
     counters_delete(subResult);
 
-    return result;
+
+    return final;
 
 }
 
 static counters_t* and_sequence(char** words, int start, int end, index_t* index) {
+
+
     if (words == NULL || index == NULL) {
         return NULL;
     }
@@ -195,12 +207,23 @@ static counters_t* and_sequence(char** words, int start, int end, index_t* index
     }
 
     counters_t* temp = index_get(index, words[start]);
-    counters_iterate(temp, result, intersection_helper);
 
-    for (int i = start + 1; i < end; i++) {
+
+
+    counters_iterate(temp, result, union_helper);
+
+
+    for (int i = start; i < end; i++) {
         if (strcmp(words[i], "and") != 0) {
             temp = index_get(index, words[i]);
+            // printf("%s: ", words[i]);
+            // counters_print(temp, stdout);
+
             counters_iterate(temp, result, intersection_helper);
+            counters_iterate(result, temp, intersection_helper);
+            counters_iterate(temp, result, intersection_helper);
+            
+
         }
     }
 
@@ -312,8 +335,8 @@ void interactiveMode(index_t* index, const char* pageDirectory){
         if (query[strlen(query) - 1] == '\n') {
             query[strlen(query) - 1] = '\0';
         }
-
         // Process and handle the query
+
         processQuery(query, index, pageDirectory);
 
         printf("\nEnter query (or press Ctrl+D to exit): ");
@@ -324,7 +347,10 @@ void interactiveMode(index_t* index, const char* pageDirectory){
 
 static void intersection_helper(void *arg, const int key, int count1) {
     counters_t *ctrs2 = arg;
+    
     int count2 = counters_get(ctrs2, key);
+
+
     if (count2 > 0) {
         int minCount = (count1 < count2) ? count1 : count2;
         counters_set(ctrs2, key, minCount);
@@ -332,8 +358,6 @@ static void intersection_helper(void *arg, const int key, int count1) {
         counters_set(ctrs2, key, 0);
     }
 }
-// Union helper function declaration
-static void union_helper(void *arg, const int key, int count);
 
 // Implementation of counters_union
 counters_t* counters_union(counters_t* ctrs1, counters_t* ctrs2) {
